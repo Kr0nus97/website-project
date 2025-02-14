@@ -1,0 +1,281 @@
+/* styles.css */
+
+/* --- Reset and Basic Styles --- */
+
+*, *::before, *::after {  /* Universal selector for consistent box-sizing */
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif; /* Body font */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* Light gray background */
+    color: #333; /* Dark gray text */
+    line-height: 1.6; /* Improve readability */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif; /* Heading font */
+    font-weight: 700; /* Bold headings */
+    margin-top: 0; /* Remove default top margin */
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; } /* Larger h1 */
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: 1em; /* Consistent paragraph spacing */
+}
+
+a {
+    color: #007bff; /*  link color */
+    text-decoration: none; /* Remove underlines by default */
+    transition: color 0.2s ease; /* Smooth color transition on hover */
+}
+
+a:hover,
+a:focus {
+    color: #0056b3; /* Darker blue on hover/focus */
+    text-decoration: underline;
+}
+
+.container { /*  container for consistent page width and centering */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px; /* Add some padding on smaller screens */
+}
+
+img {
+    max-width: 100%; /* Make images responsive */
+    height: auto;
+    display: block; /* Remove extra space below images */
+}
+
+/* --- Header and Navigation --- */
+
+header {
+    background-color: #fff;
+    color: #333;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+     position: relative; /* Needed for sticky header */
+    z-index: 100; /* Ensure header is above other content */
+}
+
+/* Sticky Header (Optional Stretch Goal - requires JavaScript)
+header.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+*/
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333; /* Dark gray logo text */
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right; /* Align navigation to the right */
+}
+
+nav ul li {
+    display: inline-block; /* Horizontal navigation */
+    margin-left: 1.5rem; /* Spacing between links */
+}
+
+nav ul li a {
+    color: #333;
+    font-weight: 600; /* Slightly bolder nav links */
+    padding: 0.5rem;
+    display: block; /* Make the whole area clickable */
+}
+nav ul li a:hover,
+nav ul li a:focus {
+    text-decoration: underline;
+}
+
+/* --- Main Content Sections --- */
+
+section {
+    padding: 3rem 0; /* More vertical padding */
+}
+
+#hero {
+    background-color: #f0f0f0; /* Lighter background for hero */
+    text-align: center; /* Center hero content */
+}
+
+.hero-image{
+    margin: 0 auto;
+}
+.featured-grid, .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 2rem; /* Spacing between grid items */
+}
+
+.featured-item, .product-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.product-image{
+	border: 1px solid #ddd;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-weight: bold;
+    color: #28a745; /* Green price color */
+    margin-top: 0.5rem;
+}
+
+/* --- Contact Form --- */
+
+#contact {
+    display: flex;  /*Use Flexbox*/
+    flex-direction: row; /*Horizontal Layout*/
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+#contact-form {
+   flex: 1; /*Form takes up available space.*/
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block; /* Labels on their own line */
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+button[type="submit"] {
+    background-color: #28a745; /* Green button */
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.contact-info {
+	flex: 1; /*Contact info section also takes up space.*/
+    padding: 1.5em;
+    border: 1px solid #ddd;
+    background-color: white;
+}
+
+/* --- Footer --- */
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 0.5rem;
+    display: inline-block; /* So margin applies correctly */
+.social-links a:hover,
+.social-links a:focus {
+    text-decoration: underline;
+}
+	 text-decoration: underline;
+}
+
+/* --- Reviews --- */
+
+.reviews blockquote {
+   margin: 1em 0;
+   padding: 1em;
+   border-left: 5px solid #28a745;
+   background-color: #f8f9fa;
+}
+.reviews cite{
+   display: block;
+   text-align: right;
+   font-style: italic;
+   margin-top: 0.5em;
+}
+/* --- Media Queries (Responsiveness - Stretch Goal) --- */
+
+/* Tablet Styles */
+@media (max-width: 768px) {
+    header {
+        text-align: center; /* Center header content on smaller screens */
+    }
+
+    nav ul {
+        text-align: center; /* Center navigation */
+		  margin-top: 10px;
+    }
+	 nav ul li {
+		 margin: 0 0.75rem;
+	 }
+
+    #contact{
+        flex-direction: column;
+    }
+
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+    nav ul li {
+        display: block; /* Stack navigation links on mobile */
+        margin: 0.5rem 0;
+    }
+	 h1 {
+		 font-size: 2rem;
+	 }
+	 h2{
+		 font-size: 1.6rem;
+	 }
+}
